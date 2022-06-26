@@ -1,10 +1,10 @@
 /// <reference types="Cypress" />
 import * as todoPage from '../page-objects/todo-page'
 
-describe('visual validations', () =>{
+describe('visual validations', () => {
 
     before(() => todoPage.navigate())
-    
+
     /* beforeEach(() =>cy.eyesOpen({
        appName: 'TAU TodoMVC', batchName: 'TAU TodoMVC Hey!',
         browser:  [
@@ -13,7 +13,7 @@ describe('visual validations', () =>{
                 { name:'chrome' ,width: 800, height: 600},
                  { deviceName:'iPhone X '},
 
-                 
+
 
 
         ]
@@ -28,12 +28,13 @@ describe('visual validations', () =>{
         todoPage.addToDo('Learn JS')
         todoPage.addToDo('Learn Cypress')
 
-       // cy.eyesCheckWindow('3 todos')
- 
+        // cy.eyesCheckWindow('3 todos')
+
         todoPage.toggleTodo(0)
+        cy.percySnapshot()
 
         //cy.eyesCheckWindow('the first Todo is completed')
-        
+
 
 
     })

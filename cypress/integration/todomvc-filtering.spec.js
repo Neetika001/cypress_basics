@@ -1,21 +1,20 @@
-import 
-{
-navigate,
-addToDo,
-validateNumberOfTodosShown,
-toggleTodo,
-clearCompleted,
-validateTodoCompletedState,
-validateToggleState,
-showOnlyActiveTodos,
-showAllTodos,
-showOnlyCompletedTodos
+import {
+    navigate,
+    addToDo,
+    validateNumberOfTodosShown,
+    toggleTodo,
+    clearCompleted,
+    validateTodoCompletedState,
+    validateToggleState,
+    showOnlyActiveTodos,
+    showAllTodos,
+    showOnlyCompletedTodos
 
 } from '../page-objects/todo-page'
 
-describe('filtering', () =>{
+describe('filtering', () => {
 
-    beforeEach(() => { 
+    beforeEach(() => {
         //cy.visit('http://todomvc-app-for-testing.surge.sh/')
         navigate()
         //cy.get('.new-todo').type("clean room{enter}")
@@ -29,24 +28,25 @@ describe('filtering', () =>{
         //cy.get('.todo-list li:nth-child(2) .toggle').click()
     })
     it('filter Select "Active" for me', () => {
-    showOnlyActiveTodos()
+        showOnlyActiveTodos()
         //cy.contains('Active').click()
     })
 
     it('filter Select "All" for me', () => {
-    showAllTodos()
+        showAllTodos()
+        cy.percySnapshot();
         //cy.contains('All').click()
     })
     it('filter Select "Completed" for me', () => {
-        
-    showOnlyCompletedTodos()
+
+        showOnlyCompletedTodos()
     })
 
     it('validate no of Todos Shown', () => {
-    validateNumberOfTodosShown(4)
+        validateNumberOfTodosShown(4)
 
-       //cy.get('.todo-list li').should('have.length', 4)
+        //cy.get('.todo-list li').should('have.length', 4)
     })
-    
+
 
 })
